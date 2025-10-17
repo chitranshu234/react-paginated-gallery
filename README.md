@@ -81,7 +81,6 @@ src/
 - Click the chevron icon to open the overlay panel
 - Enter the number of rows you want to select
 - Click "submit" to select that many artworks across pages
-- Click "clear all" to deselect everything
 
 ---
 

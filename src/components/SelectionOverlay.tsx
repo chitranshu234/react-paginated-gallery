@@ -1,8 +1,8 @@
-import React, { RefObject } from 'react';
+import React, { type RefObject } from 'react';
 import { OverlayPanel } from 'primereact/overlaypanel';
 
 interface SelectionOverlayProps {
-    op: RefObject<OverlayPanel>;
+    op: RefObject<OverlayPanel | null>; // ✅ FIXED — allow null
     selectionCount: number | null;
     onSelectionCountChange: (value: number | null) => void;
     onSubmit: () => void;

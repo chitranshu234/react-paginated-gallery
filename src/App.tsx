@@ -66,12 +66,13 @@ const App: React.FC = () => {
 
     // Handle page change
     const onPage = (event: DataTablePageEvent) => {
-        setLazyState({
-            first: event.first,
-            rows: event.rows,
-            page: event.page + 1,
-        });
-    };
+    setLazyState({
+        first: event.first,
+        rows: event.rows,
+        page: (event.page ?? 0) + 1,
+    });
+};
+
 
     // Handle row selection change
     const onSelectionChange = (e: DataTableSelectionMultipleChangeEvent<Artwork[]>) => {

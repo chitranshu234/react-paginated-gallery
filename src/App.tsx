@@ -24,13 +24,13 @@ const App: React.FC = () => {
     const [selectionCount, setSelectionCount] = useState<number | null>(null);
     const op = useRef<OverlayPanel>(null);
     
-    // --- CHANGE 1: Add a ref to track the initial page load ---
+    // Add a ref to track the initial page load ---
     const isInitialLoad = useRef(true);
 
     // Fetch data when page or rows change
     useEffect(() => {
         const fetchArtworks = async () => {
-            // --- CHANGE 2: Only show the main loader on the very first run ---
+            //  Only show the main loader on the very first run ---
             // For subsequent runs (like pagination), data will fetch in the background.
             if (isInitialLoad.current) {
                 setLoading(true);
@@ -52,7 +52,7 @@ const App: React.FC = () => {
             } catch (error) {
                 console.error('Failed to fetch artworks:', error);
             } finally {
-                // --- CHANGE 3: After the first load, set the flag to false ---
+                //  After the first load, set the flag to false ---
                 // This ensures the loader doesn't show again on pagination.
                 if (isInitialLoad.current) {
                     setLoading(false);

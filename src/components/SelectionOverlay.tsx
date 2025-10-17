@@ -2,7 +2,7 @@ import React, { type RefObject } from 'react';
 import { OverlayPanel } from 'primereact/overlaypanel';
 
 interface SelectionOverlayProps {
-    op: RefObject<OverlayPanel | null>; // ✅ FIXED — allow null
+    op: RefObject<OverlayPanel | null>; 
     selectionCount: number | null;
     onSelectionCountChange: (value: number | null) => void;
     onSubmit: () => void;
@@ -59,7 +59,7 @@ const SelectionOverlay: React.FC<SelectionOverlayProps> = ({
                         color: '#3B82F6'
                     }}
                 >
-                    submit
+                    Submit
                 </button>
                 <hr style={{ margin: '8px 0' }} />
                 <div style={{ textAlign: 'center', fontWeight: '600', color: '#111' }}>

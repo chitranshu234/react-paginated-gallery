@@ -8,7 +8,7 @@ The application allows users to explore the vast collection from the Art Institu
 
 You can view the live deployed application here:
 
-➡️ **[Insert Your Live Preview Link Here]** ⬅️
+➡️ **[Paginator Site](https://reactpaginator.netlify.app/)** ⬅️
 
 (Replace the link above with your actual deployment URL from Vercel, Netlify, or GitHub Pages.)
 

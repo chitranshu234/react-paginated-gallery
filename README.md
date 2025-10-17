@@ -1,73 +1,89 @@
-# React + TypeScript + Vite
+# React Paginated Gallery 🖼️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive and efficient art gallery browser built with React and PrimeReact. This project showcases advanced front-end techniques, including server-side pagination, dynamic bulk selection, and parallel data fetching to handle large datasets gracefully.
 
-Currently, two official plugins are available:
+The application allows users to explore the vast collection from the Art Institute of Chicago, fetching data on demand for a smooth and scalable user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔴 Live Preview
 
-## React Compiler
+You can view the live deployed application here:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+➡️ **[Insert Your Live Preview Link Here]** ⬅️
 
-## Expanding the ESLint configuration
+(Replace the link above with your actual deployment URL from Vercel, Netlify, or GitHub Pages.)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Key Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* ⚡ **Server-Side Pagination**: Data is fetched lazily from the API as the user navigates, ensuring minimal initial load time and scalability for thousands of records.
+* ✅ **Dynamic Row Selection**: Users can select single or multiple rows on the current page, with the selection state maintained across page changes.
+* 🔢 **Custom Bulk Selection**: An intuitive overlay panel allows users to select a specific number of items across multiple pages at once.
+* 🚀 **Efficient Data Fetching**: Utilizes recursive async calls to fetch data for bulk selections, significantly reducing wait times.
+* 📱 **Clean & Responsive UI**: Built with PrimeReact components for a professional, mobile-friendly interface.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠️ Technology Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+* **Framework**: React
+* **Language**: TypeScript
+* **UI Components**: PrimeReact (DataTable, Paginator, OverlayPanel) & PrimeIcons
+* **Styling**: Inline & Utility CSS
+* **API**: Art Institute of Chicago (AIC) API
+
+## 🚀 Getting Started Locally
+
+### Prerequisites
+
+Make sure you have Node.js (v16 or later) and npm installed.
+
+### Installation & Setup
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/react-paginated-gallery.git
+cd react-paginated-gallery
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install the necessary packages:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm install primereact primeicons
 ```
+
+3. Start the development server:
+
+```bash
+npm run dev
+```
+
+The application will be running on `http://localhost:5173`
+
+## 📁 Project Structure
+
+```
+src/
+├── api/
+│   └── artworkApi.ts
+├── components/
+│   ├── ArtworkTable.tsx
+│   └── SelectionOverlay.tsx
+├── types/
+│   └── artwork.ts
+├── App.tsx
+└── main.tsx
+```
+
+## 📖 Usage
+
+**Browse Artworks**: Navigate through pages using pagination controls. Change rows per page using the dropdown (12, 25, or 50).
+
+**Select Artworks**: 
+- Check boxes to select individual artworks
+- Click the chevron icon to open the overlay panel
+- Enter the number of rows you want to select
+- Click "submit" to select that many artworks across pages
+- Click "clear all" to deselect everything
+
+---
+
+**Created as an internship assignment** ✨
